@@ -1,0 +1,24 @@
+name: hackathon
+hostname: hackathon
+ip: 192.168.10.11
+
+memory: 2048
+cpus: 1
+
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    -
+        map: 'C:\Users\gabri\Documents\Projects\hackathon'
+        to: /home/vagrant/hackathon
+sites:
+    -
+        map: hackathon.dev
+        to: /home/vagrant/hackathon/public
+
+databases:
+    - hackathon
+

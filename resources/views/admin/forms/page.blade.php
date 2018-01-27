@@ -11,10 +11,12 @@
             <label>@lang('Title')</label>
             <input type="email" class="form-control" disabled>
         </div>
+
         <div class="form-group">
             <label>@lang('Friendly URL')</label>
             <input type="email" class="form-control" disabled>
         </div>
+
         <div class="form-group">
             <label for="template">@lang('Template')</label>
             <select class="form-control" id="template">
@@ -25,10 +27,13 @@
                 <option>5</option>
             </select>
         </div>
+
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Example textarea</label>
             <textarea class="form-control rich-text" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
+
+        <button type="submit" class="btn btn-primary btn-lg float-right">@lang('Save')</button>
     </form>
 
 @endsection

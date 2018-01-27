@@ -40,7 +40,7 @@
                                         @endif
                                     </div>
 
-                                    <button type="submit" class="btn btn-success btn-lg float-right">@lang('Login')</button>
+                                    <button type="submit" class="btn btn-primary btn-lg float-right">@lang('Login')</button>
 
                                     <a class="btn btn-link" href="{{ route('password/email') }}">@lang('Forgot my password')</a>
 

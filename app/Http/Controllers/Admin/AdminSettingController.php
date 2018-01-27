@@ -18,12 +18,42 @@ class AdminSettingController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application contact settings.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexContact()
     {
-        return view('admin.dashboard');
+        return view('admin.forms.contact');
+    }
+
+    /**
+     * Show the application user settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexUser()
+    {
+        return view('admin.users');
+    }
+
+    /**
+     * Show the application payment settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexPayment()
+    {
+        return view('admin.forms.payment');
+    }
+
+    /**
+     * Show the application sponsor settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexSponsor()
+    {
+        return view('admin.forms.sponsor');
     }
 }

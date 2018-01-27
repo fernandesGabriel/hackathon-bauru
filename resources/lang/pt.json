@@ -3,6 +3,9 @@
     "Pages": "Páginas",
     "Settings": "Configurações",
     "Information": "Informações Úteis",
+    "Contact": "Contato",
+    "Payment": "Pagamento",
+    "Sponsors": "Patrocinadores",
     "Users": "Usuários",
     "Page": "Página",
     "Friendly URL": "Endereço",
@@ -11,5 +14,8 @@
     "Login": "Acessar",
     "Email": "E-mail",
     "Password": "Senha",
-    "Forgot my password": "Esqueci a minha senha"
+    "Forgot my password": "Esqueci a minha senha",
+    "Logout": "Sair",
+    "Hello": "Olá",
+    "Save": "Salvar"
 }

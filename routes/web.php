@@ -37,9 +37,13 @@ Route::namespace('Auth')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
 
     Route::get('/', 'AdminController@index')->name('dashboard');
-    Route::get('/pagina', 'AdminPageController@index')->name('pages');
+    Route::get('/pagina/{page}', 'AdminPageController@index')->name('page/form');
+    Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
+    Route::get('/configuracoes/usuario', 'AdminSettingController@indexUser')->name('user');
+    Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
+    Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
 
 });

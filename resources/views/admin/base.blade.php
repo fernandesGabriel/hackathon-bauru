@@ -18,7 +18,9 @@
     </head>
     <body>
 
-        @include('admin.blocks.header')
+        <header>
+            @include('admin.blocks.header')
+        </header>
 
         <div class="container-fluid">
             <div class="row">

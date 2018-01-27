@@ -21,4 +21,14 @@ class Page extends Model
     * @var array
     */
     protected $fillable = [ 'scheme_id', 'title', 'description', 'url', 'content', 'keywords', 'menu_id' ];
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
+
+    public function scheme()
+    {
+        return $this->belongsTo(Scheme::class);
+    }
 }

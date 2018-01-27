@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,17 +9,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::middleware(['check_url'])->group(function () {
+	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('/historia', 'HomeController@index')->name('home');
+	Route::get('/{name}', 'HomeController@index')->name('home');
+});
 
 /*
 |--------------------------------------------------------------------------
 | Auth Routes Namespace
 |--------------------------------------------------------------------------
 */
-
 Route::namespace('Auth')->group(function () {
-
     Route::get('/login', 'LoginController@index')->name('login/form');
     Route::post('/login', 'LoginController@login')->name('login');
     Route::post('/logout', 'LoginController@logout')->name('logout');
@@ -28,7 +28,6 @@ Route::namespace('Auth')->group(function () {
     Route::get('/senha/reset', 'ForgotPasswordController@index')->name('password/reset/form');
     Route::post('/senha/reset', 'ResetPasswordController@reset')->name('password/reset');
     Route::get('/senha/reset/{token}', 'ResetPasswordController@index')->name('password/reset/token/form');
-
 });
 
 /*
@@ -38,12 +37,10 @@ Route::namespace('Auth')->group(function () {
 */
 
 Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
-
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::get('/pagina/{page}', 'AdminPageController@index')->name('page/form');
     Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
     Route::get('/configuracoes/usuario', 'AdminSettingController@indexUser')->name('user');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
-
 });

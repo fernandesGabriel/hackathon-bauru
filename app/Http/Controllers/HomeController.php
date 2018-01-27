@@ -7,13 +7,17 @@ use Hackathon\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-        /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+	/**
+	* Show the application dashboard.
+	*
+	* @return \Illuminate\Http\Response
+	*/
+    public function index(Request $request)
     {
-        return view('home');
+    	$view = 'home';
+    	if(!empty($request->page)){
+    		$view = $request->page->scheme->view;
+    	}
+        return view('templates.' . $view);
     }
 }

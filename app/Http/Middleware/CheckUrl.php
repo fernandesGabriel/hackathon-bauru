@@ -16,8 +16,8 @@ class CheckUrl
      */
     public function handle($request, Closure $next)
     {
-        if($request->route()->uri != '/'){
-            $request->page = Page::where('url', $request->route()->uri)->first();
+        if(!empty($request->route()->parameters['name']) && $request->route()->parameters['name'] != '/'){
+            $request->page = Page::where('url', $request->route()->parameters['name'])->first();
             if(empty($request->page)){
                 return redirect()->guest('/');
             }

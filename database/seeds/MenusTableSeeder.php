@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Hackathon\Menus;
-use Hackathon\Pages;
+use Hackathon\Models\Menu;
+use Hackathon\Models\Page;
 
 class MenusTableSeeder extends Seeder
 {
@@ -13,9 +13,9 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     {
-        $pages = Pages::orderBy('id')->get();
+        $pages = Page::orderBy('id')->get();
         foreach ($pages as $page) {
-        	$menu = new Menus;
+        	$menu = new Menu;
         	$menu->title = $page->title;
         	$menu->path = $page->url;
         	$menu->save();

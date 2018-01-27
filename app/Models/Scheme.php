@@ -20,5 +20,10 @@ class Scheme extends Model
     *
     * @var array
     */
-    protected $fillable = [ 'name', 'data' ];
+    protected $fillable = [ 'name', 'data', 'view' ];
+
+    public function getDataAttribute($data)
+    {
+        return $data ? json_decode($data) : $data;
+    }
 }

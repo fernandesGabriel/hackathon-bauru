@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,17 +9,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::middleware(['check_url'])->group(function () {
+	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('/historia', 'HomeController@index')->name('home');
+	Route::get('/{name}', 'HomeController@index')->name('home');
+});
 
 /*
 |--------------------------------------------------------------------------
 | Auth Routes Namespace
 |--------------------------------------------------------------------------
 */
-
 Route::namespace('Auth')->group(function () {
-
     Route::get('/login', 'LoginController@index')->name('login/form');
     Route::post('/login', 'LoginController@login')->name('login');
     Route::post('/logout', 'LoginController@logout')->name('logout');
@@ -28,7 +28,6 @@ Route::namespace('Auth')->group(function () {
     Route::get('/senha/reset', 'ForgotPasswordController@index')->name('password/reset/form');
     Route::post('/senha/reset', 'ResetPasswordController@reset')->name('password/reset');
     Route::get('/senha/reset/{token}', 'ResetPasswordController@index')->name('password/reset/token/form');
-
 });
 
 /*
@@ -36,10 +35,7 @@ Route::namespace('Auth')->group(function () {
 | Admin Routes Namespace
 |--------------------------------------------------------------------------
 */
-
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
-
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::get('/pagina', 'AdminPageController@index')->name('pages');
-
 });

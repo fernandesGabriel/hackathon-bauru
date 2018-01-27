@@ -3,6 +3,7 @@
 namespace Hackathon\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Hackathon\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

@@ -11,24 +11,28 @@
         <title>{{ config('app.name', 'Hackathon') }}</title>
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
         @stack('styles')
 
     </head>
     <body>
 
-        <header class="container">
-            @include('blocks.header')
-        </header>
+        @include('admin.blocks.header')
 
-        <main role="main" class="container">
-            @yield('content')
-        </main>
+        <div class="container-fluid">
+            <div class="row">
 
-        <footer class="container">
-            @include('blocks.footer')
-        </footer>
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    @include('admin.blocks.sidebar')
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                    @yield('content')
+                </main>
+
+            </div>
+        </div>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>

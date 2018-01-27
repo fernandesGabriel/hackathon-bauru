@@ -18,6 +18,7 @@
     "command": "0.0.5",
     "cross-env": "^5.1",
     "external": "^1.0.0",
+    "font-awesome": "^4.7.0",
     "internal": "^1.0.8",
     "jquery": "^3.2",
     "laravel-mix": "^1.0",

@@ -14,3 +14,9 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+
+    Route::get('/', 'AdminController@index')->name('dashboard');
+
+});

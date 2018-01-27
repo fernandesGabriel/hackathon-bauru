@@ -39,6 +39,8 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUserForm')->name('user/form');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
+
+    Route::post('/pagina/update', 'AdminPageController@update')->name('page/update');
 });
 
 Route::middleware(['check_url'])->group(function () {

@@ -15,42 +15,7 @@
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('History')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('How to visit')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Contribute')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Bazar')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Day Care')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Contact')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Transparency')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Information')
+                <i class="fa fa-cog" aria-hidden="true"></i> Titulo
             </a>
         </li>
     </ul>

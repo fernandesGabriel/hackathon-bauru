@@ -27,6 +27,7 @@
     "popper.js": "^1.12.9",
     "postcss-css-variables": "^0.8.0",
     "sass-loader": "^6.0.6",
+    "tinymce": "^4.7.5",
     "vue": "^2.5.7",
     "vue-loader": "^13.7.0"
   }

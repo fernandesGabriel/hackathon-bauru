@@ -96,6 +96,15 @@ body {
 }
 
 /*
+ * Content
+ */
+.admin-content {
+    @include media-breakpoint-up(md) {
+        max-width: 900px;
+    }
+}
+
+/*
  * Utilities
  */
 

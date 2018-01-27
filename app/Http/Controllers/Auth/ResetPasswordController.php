@@ -2,8 +2,9 @@
 
 namespace Hackathon\Http\Controllers\Auth;
 
-use Hackathon\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Hackathon\Http\Controllers\Controller;
 
 class ResetPasswordController extends Controller
 {
@@ -35,5 +36,21 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Display the password reset view for the given token.
+     *
+     * If no token is present, display the link request form.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  string|null $token
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request, $token = null)
+    {
+        return view('pages.auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

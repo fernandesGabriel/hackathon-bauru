@@ -16,7 +16,7 @@
         @stack('styles')
 
     </head>
-    <body>
+    <body class="@yield('body-class')">
 
         <header class="container">
             @include('blocks.header')

@@ -3,6 +3,7 @@
 namespace Hackathon\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Hackathon\Http\Controllers\Controller;
 
 class AdminSettingController extends Controller
 {
@@ -23,6 +24,6 @@ class AdminSettingController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('admin.dashboard');
     }
 }

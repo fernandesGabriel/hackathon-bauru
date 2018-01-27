@@ -14,10 +14,11 @@ class HomeController extends Controller
 	*/
     public function index(Request $request)
     {
-    	$view = 'home';
+    	$view = 'homepage';
     	if(!empty($request->page)){
     		$view = $request->page->scheme->view;
     	}
-        return view($view);
+
+        return view("templates." . $view);
     }
 }

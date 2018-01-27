@@ -44,7 +44,5 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
 
 Route::middleware(['check_url'])->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
-    
-    //ultimo
     Route::get('/{name}', 'HomeController@index')->name('home');
 });

@@ -176,6 +176,7 @@ return [
         // Hackathon\Providers\BroadcastServiceProvider::class,
         Hackathon\Providers\EventServiceProvider::class,
         Hackathon\Providers\RouteServiceProvider::class,
+        Hackathon\Providers\NavigationServiceProvider::class,
 
     ],
 

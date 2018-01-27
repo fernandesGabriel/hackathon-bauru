@@ -3,26 +3,22 @@
 namespace Hackathon\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Hackathon\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+	/**
+	* Show the application dashboard.
+	*
+	* @return \Illuminate\Http\Response
+	*/
+    public function index(Request $request)
     {
-        $this->middleware('auth');
-    }
+    	$view = 'homepage';
+    	if(!empty($request->page)){
+    		$view = $request->page->scheme->view;
+    	}
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
+        return view("templates." . $view);
     }
 }

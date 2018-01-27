@@ -13,9 +13,18 @@ let mix = require('laravel-mix');
 
 // Compile JS
 mix.js('resources/assets/js/app.js', 'public/js');
+mix.js('resources/assets/js/admin.js', 'public/js');
 
 // Compile SASS
 mix.sass('resources/assets/sass/app.scss', 'public/css')
+    .version()
+    .options({
+        postCss: [
+            require('postcss-css-variables')()
+        ]
+    });
+
+mix.sass('resources/assets/sass/admin.scss', 'public/css')
     .version()
     .options({
         postCss: [

@@ -1,0 +1,8 @@
+// Theme
+
+body {
+    &.no-header header,
+    &.no-footer footer {
+        display: none;
+    }
+}

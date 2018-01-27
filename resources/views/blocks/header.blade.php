@@ -1,22 +1,40 @@
-<div class="row flex-nowrap">
-    <div class="col-4 pt-1">
-        <a href="#">{{ config('app.name', 'Hackathon') }}</a>
-    </div>
-</div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light container-fluid py-3 text-center">
 
-<div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">World</a>
-        <a class="p-2 text-muted" href="#">U.S.</a>
-        <a class="p-2 text-muted" href="#">Technology</a>
-        <a class="p-2 text-muted" href="#">Design</a>
-        <a class="p-2 text-muted" href="#">Culture</a>
-        <a class="p-2 text-muted" href="#">Business</a>
-        <a class="p-2 text-muted" href="#">Politics</a>
-        <a class="p-2 text-muted" href="#">Opinion</a>
-        <a class="p-2 text-muted" href="#">Science</a>
-        <a class="p-2 text-muted" href="#">Health</a>
-        <a class="p-2 text-muted" href="#">Style</a>
-        <a class="p-2 text-muted" href="#">Travel</a>
-    </nav>
-</div>
+    <a class="navbar-brand" href="#">
+        <img src="https://placeholdit.co//i/200x100?&bg=666666&fc=eeeeee&text=Image Logo" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav float-right">
+            <li class="nav-item active">
+                <a class="nav-link py-2" href="#">Início <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Institucional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Como funcionar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Centro dia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Bazar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Transparência</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-2" href="#">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-primary" role="button" aria-pressed="true" href="#">Contribua</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>

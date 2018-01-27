@@ -32,6 +32,10 @@ mix.sass('resources/assets/sass/admin.scss', 'public/css')
         ]
     });
 
+// Copy assets
+mix.copyDirectory('resources/assets/img', 'public/img');
+
+
 // Additional settings
 mix.version();
 

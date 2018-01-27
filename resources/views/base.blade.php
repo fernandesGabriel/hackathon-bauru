@@ -22,11 +22,11 @@
             @include('blocks.header')
         </header>
 
-        <main role="main" class="container">
+        <main>
             @yield('content')
         </main>
 
-        <footer class="container">
+        <footer class="bg-slider bg-primary inverse">
             @include('blocks.footer')
         </footer>
 

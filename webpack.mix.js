@@ -23,6 +23,14 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
         ]
     });
 
+mix.sass('resources/assets/sass/admin.scss', 'public/css')
+    .version()
+    .options({
+        postCss: [
+            require('postcss-css-variables')()
+        ]
+    });
+
 // Additional settings
 mix.version();
 

@@ -16,11 +16,10 @@
         @foreach ($pages as $page)
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin/page/form', ['page' => $page->id]) }}">
-                    <i class="fa fa-cog" aria-hidden="true"></i> {{ $page->title }}
+                   {{ $page->title }}
                 </a>
             </li>
         @endforeach
-
     </ul>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -29,22 +28,22 @@
     <ul class="nav flex-column mb-2">
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin/contact/form')  }}">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Contact')
+               @lang('Contact')
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin/user')  }}">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Users')
+                @lang('Users')
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin/payment/form')  }}">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Payments')
+                @lang('Payments')
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin/sponsor/form')  }}">
-                <i class="fa fa-cog" aria-hidden="true"></i> @lang('Sponsors')
+                @lang('Sponsors')
             </a>
         </li>
     </ul>

@@ -2,6 +2,7 @@
 
 namespace Hackathon\Http\Controllers\Admin;
 
+use Hackathon\User;
 use Illuminate\Http\Request;
 use Hackathon\Http\Controllers\Controller;
 
@@ -34,7 +35,24 @@ class AdminSettingController extends Controller
      */
     public function indexUser()
     {
-        return view('admin.users');
+        $users = User::withTrashed();
+
+        return view('admin.users',[
+            'users' => $users,
+        ]);
+    }
+
+    /**
+     * Show the application user settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showUserForm(User $user)
+    {
+        return view('admin.forms.user', [
+           'hasUser' => !is_null($user->id),
+           'user' => $user
+        ]);
     }
 
     /**

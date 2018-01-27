@@ -35,7 +35,8 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::get('/pagina/{page}', 'AdminPageController@index')->name('page/form');
     Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
-    Route::get('/configuracoes/usuario', 'AdminSettingController@indexUser')->name('user');
+    Route::get('/configuracoes/usuarios', 'AdminSettingController@indexUser')->name('user');
+    Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUserForm')->name('user/form');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
 });

@@ -9,11 +9,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['check_url'])->group(function () {
-	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('/historia', 'HomeController@index')->name('home');
-	Route::get('/{name}', 'HomeController@index')->name('home');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +38,11 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/configuracoes/usuario', 'AdminSettingController@indexUser')->name('user');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
+});
+
+Route::middleware(['check_url'])->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    
+    //ultimo
+    Route::get('/{name}', 'HomeController@index')->name('home');
 });

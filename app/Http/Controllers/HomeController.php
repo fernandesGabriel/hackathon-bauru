@@ -18,6 +18,6 @@ class HomeController extends Controller
     	if(!empty($request->page)){
     		$view = $request->page->scheme->view;
     	}
-        return view('templates.' . $view);
+        return view($view);
     }
 }

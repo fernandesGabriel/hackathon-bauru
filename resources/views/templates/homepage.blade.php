@@ -6,7 +6,7 @@
         <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/public/img/banner-1.png">
+                    <img src="{{ asset('img/banner-1.png') }}">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

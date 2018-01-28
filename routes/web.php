@@ -30,20 +30,25 @@ Route::namespace('Auth')->group(function () {
 | Admin Routes Namespace
 |--------------------------------------------------------------------------
 */
-
 Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::get('/pagina/{page}', 'AdminPageController@index')->name('page/form');
+    Route::post('/pagina/update', 'AdminPageController@update')->name('page/update');
     Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
     Route::get('/configuracoes/usuarios', 'AdminSettingController@indexUser')->name('user');
-    Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUserForm')->name('user/form');
+    Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUser')->name('user/form');
+    Route::post('/configuracoes/usuarios/update', 'AdminSettingController@saveUser')->name('user/update');
+    Route::post('/configuracoes/usuarios/delete', 'AdminSettingController@deleteUser')->name('user/delete');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
-
-    Route::post('/pagina/update', 'AdminPageController@update')->name('page/update');
 });
 
-Route::middleware(['check_url'])->group(function () {
+/*
+|--------------------------------------------------------------------------
+| Web Routes Namespace
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['check.friendlyurl'])->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/{name}', 'HomeController@index')->name('home');
 });

@@ -6,31 +6,45 @@ body {
     }
 }
 
+a {
+    transition: .3s;
+}
+
 section {
     padding:80px 0;
 }
+
 img {
     width: 100%;
 }
+
 nav.navbar {
     background-color: #fff;
 }
+
 main {
     margin-top:122px;
 }
+
 h2 {
     margin-bottom:40px;
 }
+
 .bg-gradient {
     background-image: linear-gradient(to top, #dbfdff, white, #dbfdff);
 }
+
 .inverse * {
     color: #fff;
 }
-.navbar-brand img {
-    height: 80px;
-    width: auto;
+
+header {
+    .navbar-brand img {
+        height: 80px;
+        width: auto;
+    }
 }
+
 #slider-pages {
     .bg-slider {
         padding: 40px 0;
@@ -80,6 +94,7 @@ h2 {
         }
     }
 }
+
 #news {
     .text {
         margin-top: -80px;
@@ -110,6 +125,7 @@ h2 {
         }
     }
 }
+
 #sponsor {
     @include media-breakpoint-down(md) {
         .col-md-6 {
@@ -117,6 +133,7 @@ h2 {
         }
     }
 }
+
 footer {
     padding: 60px 0;
     @include media-breakpoint-down(lg) {
@@ -124,4 +141,55 @@ footer {
             margin-bottom: 20px;
         }
     }
+}
+
+img.img-half {
+    float: right;
+    width: 50%;
+}
+
+#template3 {
+    img {
+        width: 100%;
+    }
+    .side-menu {
+        background-color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        li {
+            display: block;
+            a {
+                line-height: 2;
+                color: $secondary;
+                &:hover {
+                    text-decoration: none;
+                    color: $primary;
+                }
+            }
+            &.active a {
+                color: $primary;
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        h2 {
+            margin-top: 40px;
+        }
+    }
+}
+
+section.form {
+    margin-top: -180px;
+    background-color: #fff;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    @include media-breakpoint-down(md) {
+        .col-md-12 {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+h1, h2 {
+    color: $primary;
 }

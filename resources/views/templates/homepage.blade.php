@@ -35,8 +35,8 @@
             <div id="carouselIndicators" class="carousel slide container" data-ride="carousel">
                 <div class="row">
                     <div class="col-md-5">
-                        <h2>Contribua com o Bazar da Vila Vicentina</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <h2>{{ $content->title_1 }}</h2>
+                        {!! $content->content_1 !!}
                         <div class="row">
                             <div class="col-md-6">
                                 <a href="" class="btn btn-outline-light">Saiba mais</a>

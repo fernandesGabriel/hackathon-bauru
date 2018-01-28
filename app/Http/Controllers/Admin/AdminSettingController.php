@@ -5,6 +5,7 @@ namespace Hackathon\Http\Controllers\Admin;
 use Hackathon\Models\Settings;
 use Hackathon\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Validator;

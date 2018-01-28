@@ -19,9 +19,22 @@ class AdminPageController extends Controller
     public function index($id)
     {
         $page = Page::find($id);
-        $scheme = $page->scheme->data;
-        $allscheme = Scheme::get();
-        return view('admin.forms.page', ['page' => $page, 'scheme' => $scheme, 'allscheme' => $allscheme]);
+        $pageData = $page->content;
+        $pageScheme = Scheme::find($page->scheme_id)->data;
+        $schemes = Scheme::get();
+
+        foreach ($pageScheme as $key => &$params) {
+            $params->value = "";
+            if (isset($pageData->$key)) {
+                $params->value = $pageData->$key;
+            }
+        }
+
+        return view('admin.forms.page', [
+            'page' => $page,
+            'pageScheme' => $pageScheme,
+            'schemes' => $schemes
+        ]);
     }
 
     public function update(Request $request)
@@ -32,8 +45,11 @@ class AdminPageController extends Controller
             'scheme' => 'required',
             'url' => 'required'
         ]);
+
         $id = $request->input('id');
+
         if(!$validator->fails()){
+
             $page = Page::find($id);
             $scheme = $page->scheme->data;
             foreach ($scheme as $key => $value) {
@@ -41,6 +57,7 @@ class AdminPageController extends Controller
                     $datas[$key] = $request->input($key);
                 }
             }
+
             $page->scheme_id = $request->input('scheme');
             $page->page_title = $request->input('page_title');
             $page->description = $request->input('description');
@@ -48,8 +65,10 @@ class AdminPageController extends Controller
             $page->url = $request->input('url');
             $page->keywords = $request->input('keywords');
             $page->save();
+
         }
-        return redirect('/admin/pagina/' . $id)->withErrors($validator)->withInput();
+
+        return back()->withErrors($validator)->withErrors($validator)->withInput();
     }
 
 }

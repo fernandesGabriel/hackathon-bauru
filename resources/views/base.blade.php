@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Hackathon') }}</title>
+        <title>@if($request->page) {{ $request->page->page_title }} | @endif {{ config('app.name', 'Hackathon') }}</title>
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">

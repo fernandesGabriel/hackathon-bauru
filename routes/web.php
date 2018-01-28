@@ -39,8 +39,8 @@ Route::namespace('Auth')->group(function () {
 */
 Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
-    Route::get('/pagina/{page}', 'AdminPageController@index')->name('page/form');
-    Route::post('/pagina/update', 'AdminPageController@update')->name('page/update');
+    Route::get('/configuracoes/pagina/{page}', 'AdminPageController@index')->name('page/form');
+    Route::post('/configuracoes/pagina/update', 'AdminPageController@update')->name('page/update');
     Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
     Route::get('/configuracoes/usuarios', 'AdminSettingController@indexUser')->name('user');
     Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUser')->name('user/form');

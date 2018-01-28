@@ -53,7 +53,7 @@
                     <div class="col-md-7">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="img-fluid" src="/public/images/pic.jpeg" alt="Lorem ipsum">
+                                <img class="img-fluid" src="{{ asset('img/02.png') }}" alt="Lorem ipsum">
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
         <h2 class="text-center">Últimas notícias</h2>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                <img class="img-fluid rounded" src="{{ asset('img/01.png') }}" alt="Lorem ipsum">
                 <div class="text mx-4 p-4">
                     <p class="date"><small>02/03/2018 - Segunda-feira</small></p>
                     <h3>Lorem ipsum dolor sit</h3>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                <img class="img-fluid rounded" src="{{ asset('img/01.png') }}" alt="Lorem ipsum">
                 <div class="text mx-4 p-4">
                     <p class="date"><small>02/03/2018 - Segunda-feira</small></p>
                     <h3>Lorem ipsum dolor sit</h3>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                <img class="img-fluid rounded" src="{{ asset('img/01.png') }}" alt="Lorem ipsum">
                 <div class="text mx-4 p-4">
                     <p class="date"><small>02/03/2018 - Segunda-feira</small></p>
                     <h3>Lorem ipsum dolor sit</h3>
@@ -103,16 +103,16 @@
                     <h2>Empresas que apoiam essa causa</h2>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                    <img class="img-fluid rounded" src="{{ asset('img/sporsor1.png') }}" alt="Lorem ipsum">
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                    <img class="img-fluid rounded" src="{{ asset('img/sporsor2.png') }}" alt="Lorem ipsum">
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                    <img class="img-fluid rounded" src="{{ asset('img/sporsor3.png') }}" alt="Lorem ipsum">
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="https://placeholdit.co//i/400x300?&bg=666666&fc=eeeeee&text=Image (4x3)" alt="Lorem ipsum">
+                    <img class="img-fluid rounded" src="{{ asset('img/sporsor4.png') }}" alt="Lorem ipsum">
                 </div>
             </div>
         </div>

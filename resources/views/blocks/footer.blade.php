@@ -26,7 +26,7 @@
         </div>
         <div class="col-lg-4 col-md-12">
             <h3>Nos siga no Facebook</h3>
-            <p>[facebook]</p>
+            <div class="fb-page" data-href="https://www.facebook.com/vilavicentinabauru/" data-tabs="timeline" data-width="370" data-height="215" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vilavicentinabauru/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vilavicentinabauru/">Vila Vicentina Bauru</a></blockquote></div>
         </div>
     </div>
 </div>

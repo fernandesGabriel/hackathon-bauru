@@ -53,6 +53,14 @@ class NavigationServiceProvider extends ServiceProvider
         });
     }
 
+    public function composeSponsor()
+    {
+        $footer = Settings::select('key as chave', 'value')->get()->keyBy('chave');
+        view()->composer('blocks.footer', function ($view) use ($footer){
+            $view->with('footer', $footer);
+        });
+    }
+
     /**
      * Register the application services.
      *

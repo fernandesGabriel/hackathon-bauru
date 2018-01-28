@@ -6,6 +6,7 @@ use Hackathon\Models\Settings;
 use Hackathon\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 use Hackathon\Http\Controllers\Controller;
 
@@ -66,32 +67,25 @@ class AdminSettingController extends Controller
     public function saveUser (Request $request)
     {
         if (!empty($request->input('id'))) {
-
             $validateSchema = [
                 'name' => 'required',
                 'last_name' => 'max:255',
                 'email' => [
                     'required',
                     'max:255',
-                    Rule::unique('users')->ignore($request->input('id')),
                 ],
                 'registration' => 'max:255',
                 'username' => [
                     'required',
                     'max:255',
-                    Rule::unique('users')->ignore($request->input('id')),
                 ],
             ];
 
             if (!empty($request->input('password'))) {
-
                 $validateSchema['password'] = 'confirmed|min:8';
                 $validateSchema['password_confirmation'] = 'required|min:8';
-
             }
-
         } else {
-
             $validateSchema = [
                 'name' => 'required',
                 'last_name' => 'max:255',
@@ -106,13 +100,11 @@ class AdminSettingController extends Controller
                 ],
                 'password' => 'required|min:8'
             ];
-
         }
 
         $validator = Validator::make($request->all(), $validateSchema);
 
         if(!$validator->fails()){
-
             $data  = [
                 'name' => $request->input('name'),
                 'last_name' => $request->input('last_name'),
@@ -122,16 +114,12 @@ class AdminSettingController extends Controller
             ];
 
             if (!empty($request->input('password'))) {
-
-                $data['password'] = $request->input('password');
-
+                $data['password'] = Hash::make($request->input('password'));
             }
-
-            $user = User::updateOrCreate(
-               $data,
-                ['id' => $request->input('id')]
+            User::updateOrCreate(
+               ['id' => (int) $request->input('id')],
+               $data
             );
-
             return redirect()->route('admin/user');
         }
 

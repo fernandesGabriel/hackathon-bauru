@@ -1,5 +1,7 @@
 @extends('base')
 
+@section('body-class',"login no-header no-footer")
+
 @section('content')
 <div class="container">
     <div class="row">

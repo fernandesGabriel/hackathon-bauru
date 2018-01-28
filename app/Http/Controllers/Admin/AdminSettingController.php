@@ -7,7 +7,6 @@ use Hackathon\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Hash;
 use Validator;
 use Hackathon\Http\Controllers\Controller;
 

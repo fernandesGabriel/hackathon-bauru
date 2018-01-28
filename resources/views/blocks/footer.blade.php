@@ -3,17 +3,9 @@
         <div class="col-lg-4 col-md-12">
             <h3>Contato</h3>
             <p>
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-                </span>
                 {{ array_get($footer, 'settings_phonenumber.value') }}
             </p>
             {{ array_get($footer, 'settings_address.value') }}
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-            </span>
             <p>Vila Vicentina Abrigo para Velhos - Rua Jorge Pimentel, 2-5 Vila Engler <br>CEP 17065-010 Bauru/SP</p>
             <p>vilavicentina@terra.com.br</p>
             <p>gerencia@vilavicentinabauru.com.br</p>

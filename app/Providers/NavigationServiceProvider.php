@@ -3,6 +3,7 @@
 namespace Hackathon\Providers;
 
 use Hackathon\Models\Page;
+use Hackathon\Models\Menu;
 use Illuminate\Support\ServiceProvider;
 
 class NavigationServiceProvider extends ServiceProvider
@@ -26,9 +27,7 @@ class NavigationServiceProvider extends ServiceProvider
     public function composeAdminSidebar()
     {
         view()->composer('admin.blocks.sidebar', function ($view) {
-
-            $view->with('pages', Page::all());
-
+            $view->with('pages', Page::orderBy('menu_id')->get());
         });
     }
 
@@ -40,9 +39,7 @@ class NavigationServiceProvider extends ServiceProvider
     public function composeMenu()
     {
         view()->composer('blocks.header', function ($view) {
-
-            $view->with('pages', Page::all());
-
+            $view->with('menus', Menu::orderBy('id')->get());
         });
     }
 

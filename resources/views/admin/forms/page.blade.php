@@ -53,7 +53,6 @@
         </div>
 
         @foreach ($pageScheme as $field => $params)
-
             @switch($params->type)
                 @case('rich-text')
                     <div class="form-group">

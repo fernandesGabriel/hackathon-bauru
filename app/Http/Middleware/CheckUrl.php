@@ -23,6 +23,8 @@ class CheckUrl
             }
         }
 
+        dd($request->page);
+
         return $next($request);
     }
 }

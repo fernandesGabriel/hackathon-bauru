@@ -10,9 +10,9 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            @foreach ($pages as $page)
+            @foreach ($menus as $menu)
                 <li class="nav-item">
-                    <a class="nav-link py-2" href="{{ route('home', ['name' => $page->url]) }}">{{ $page->page_title }}</a>
+                    <a class="{{ $menu->data->class }}" href="{{ route('home', ['name' => $menu->path]) }}">{{ $menu->title }}</a>
                 </li>
             @endforeach
         </ul>

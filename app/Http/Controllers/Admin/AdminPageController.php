@@ -66,6 +66,12 @@ class AdminPageController extends Controller
             $page->keywords = $request->input('keywords');
             $page->save();
 
+            if(!empty($page->menu)){
+                $menu = $page->menu;
+                $menu->path = $page->url;
+                $menu->title = $page->page_title;
+                $menu->save();
+            }
         }
 
         return back()->withErrors($validator)->withErrors($validator)->withInput();

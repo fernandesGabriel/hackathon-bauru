@@ -79,7 +79,7 @@ class SchemesTableSeeder extends Seeder
         ];
 
         $schemes = [
-        	['Homeapge', json_encode($default), 'homepage'],
+        	['Homepage', json_encode($default), 'homepage'],
         	['Single Content', json_encode($default), 'single-content'],
         	['Single Content Call to Action', json_encode($default), 'single-content-call-action'],
         	['Five Content with Sidebar', json_encode($fiveContentsSidebar), 'five-contents-sidebar'],

@@ -22,4 +22,9 @@ class Menu extends Model
     * @var array
     */
     protected $fillable = [ 'title', 'path', 'description', 'data', 'menu_id' ];
+
+    public function getDataAttribute($data)
+    {
+        return $data ? json_decode($data) : $data;
+    }
 }

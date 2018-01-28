@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Scheme extends Model
 {
     use SoftDeletes;
+
     /**
     * The database table used by the model.
     *

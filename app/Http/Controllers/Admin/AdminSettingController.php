@@ -2,6 +2,7 @@
 
 namespace Hackathon\Http\Controllers\Admin;
 
+use Hackathon\Models\Settings;
 use Hackathon\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -161,7 +162,39 @@ class AdminSettingController extends Controller
      */
     public function indexPayment()
     {
-        return view('admin.forms.payment');
+        $setting_pagseguro = Settings::find('setting_pagseguro');
+        $setting_payment = Settings::find('setting_payment');
+
+        return view('admin.forms.payment',[
+            "setting_pagseguro" =>$setting_pagseguro,
+            "setting_payment" => $setting_payment
+        ]);
+    }
+
+    /**
+     * Show the application payment settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function savePayment(Request $request)
+    {
+        Settings::updateOrCreate(
+            [
+                'key' => 'setting_pagseguro',
+                'value' => $request->input('setting_pagseguro')
+            ],
+            ['key' => 'setting_pagseguro']
+        );
+
+        Settings::updateOrCreate(
+            [
+                'key' => 'setting_payment',
+                'value' => $request->input('setting_payment')
+            ],
+            ['key' => 'setting_payment']
+        );
+
+        return redirect()->route('admin/payment/form');
     }
 
     /**

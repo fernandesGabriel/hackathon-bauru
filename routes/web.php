@@ -40,6 +40,7 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::post('/configuracoes/usuarios/update', 'AdminSettingController@saveUser')->name('user/update');
     Route::post('/configuracoes/usuarios/delete', 'AdminSettingController@deleteUser')->name('user/delete');
     Route::get('/configuracoes/pagamento', 'AdminSettingController@indexPayment')->name('payment/form');
+    Route::post('/configuracoes/pagamento', 'AdminSettingController@savePayment')->name('payment/update');
     Route::get('/configuracoes/patrocinadores', 'AdminSettingController@indexSponsor')->name('sponsor/form');
 });
 

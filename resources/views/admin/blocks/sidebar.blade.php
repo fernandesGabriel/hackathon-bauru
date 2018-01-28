@@ -38,7 +38,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin/payment/form')  }}">
-                @lang('Payments')
+                @lang('Payment')
             </a>
         </li>
         <li class="nav-item">

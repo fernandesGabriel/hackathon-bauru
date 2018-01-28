@@ -22,9 +22,6 @@ class CheckUrl
                 return redirect()->guest('/');
             }
         }
-
-        dd($request->page);
-
         return $next($request);
     }
 }

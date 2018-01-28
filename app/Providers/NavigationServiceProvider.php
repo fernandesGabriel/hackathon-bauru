@@ -4,6 +4,7 @@ namespace Hackathon\Providers;
 
 use Hackathon\Models\Page;
 use Hackathon\Models\Menu;
+use Hackathon\Models\Settings;
 use Illuminate\Support\ServiceProvider;
 
 class NavigationServiceProvider extends ServiceProvider
@@ -17,6 +18,7 @@ class NavigationServiceProvider extends ServiceProvider
     {
         $this->composeAdminSidebar();
         $this->composeMenu();
+        $this->composeFooter();
     }
 
     /**
@@ -40,6 +42,14 @@ class NavigationServiceProvider extends ServiceProvider
     {
         view()->composer('blocks.header', function ($view) {
             $view->with('menus', Menu::orderBy('id')->get());
+        });
+    }
+
+    public function composeFooter()
+    {
+        $footer = Settings::select('key as chave', 'value')->get()->keyBy('chave');
+        view()->composer('blocks.footer', function ($view) use ($footer){
+            $view->with('footer', $footer);
         });
     }
 

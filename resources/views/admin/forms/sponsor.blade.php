@@ -12,15 +12,20 @@
                 <input name="image" type="file">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg float-right">@lang('Save')</button>
-    	<ul>
-        	@foreach($attachs as $attach)
-        		<li>
-        			<img src="{{ URL::to($attach->path) }}"  width="10%" />
-        			<a href="{{ action('Admin\AdminSponsorController@delete', ['id' => $attach->id]) }}" class="btn btn-outline-error btm-sm pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-        		</li>
-    	    @endforeach
-    	</ul>
+        <div class="row-fluid">
+            <ul id="gallery-sponsor">
+                @foreach($attachs as $attach)
+                    <li class="mb-2 mr-2">
+                        <img src="{{ URL::to($attach->path) }}"/>
+                        <a href="{{ action('Admin\AdminSponsorController@delete', ['id' => $attach->id]) }}" class="btn btn-outline-error btm-sm pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="row-fluid">
+            <button type="submit" class="btn btn-primary btn-lg float-right">@lang('Save')</button>
+        </div>
+    	
     </form>
 
 @endsection

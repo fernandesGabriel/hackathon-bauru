@@ -4,7 +4,7 @@
     "Settings": "Configurações",
     "Information": "Informações Úteis",
     "Contact": "Contato",
-    "Payments": "Pagamento",
+    "Payment": "Pagamento",
     "Sponsors": "Patrocinadores",
     "Users": "Usuários",
     "Page": "Página",
@@ -25,5 +25,7 @@
     "Access": "Acesso",
     "Username": "Usuário",
     "Repeat Password": "Repetir Senha",
-    "Registration": "Matrícula"
+    "Registration": "Matrícula",
+    "Snippet Pagseguro": "Snippet Pagseguro",
+    "Snippet Paypal": "Snippet Paypal"
 }

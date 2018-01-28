@@ -6,15 +6,17 @@
         <h1 class="h2">@lang('Payment')</h1>
     </div>
 
-    <form>
+    <form action="{{ action('Admin\AdminSettingController@savePayment') }}" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+
         <div class="form-group">
-            <label for="">Snippet Pagseguro</label>
-            <textarea class="form-control rich-text" id="" rows="3" name></textarea>
+            <label for="">@lang('Snippet Pagseguro')</label>
+            <textarea class="form-control" rows="3" name="setting_pagseguro">{{ $setting_pagseguro->value }}</textarea>
         </div>
 
         <div class="form-group">
-            <label for="">Snippet Paypal</label>
-            <textarea class="form-control rich-text" id="" rows="3" name></textarea>
+            <label for="">@lang("Snippet Paypal")</label>
+            <textarea class="form-control" rows="3" name="setting_payment">{{ $setting_payment->value }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg float-right">@lang('Save')</button>

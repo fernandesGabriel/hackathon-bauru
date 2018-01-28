@@ -15,6 +15,7 @@ class NavigationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeAdminSidebar();
+        $this->composeMenu();
     }
 
     /**
@@ -25,6 +26,20 @@ class NavigationServiceProvider extends ServiceProvider
     public function composeAdminSidebar()
     {
         view()->composer('admin.blocks.sidebar', function ($view) {
+
+            $view->with('pages', Page::all());
+
+        });
+    }
+
+    /**
+     * Create admin sidebar
+     *
+     * @return void
+     */
+    public function composeMenu()
+    {
+        view()->composer('blocks.header', function ($view) {
 
             $view->with('pages', Page::all());
 

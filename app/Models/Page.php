@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Page extends Model
 {
     use SoftDeletes;
+
     /**
     * The database table used by the model.
     *
@@ -20,7 +21,7 @@ class Page extends Model
     *
     * @var array
     */
-    protected $fillable = [ 'scheme_id', 'title', 'description', 'url', 'content', 'keywords', 'menu_id' ];
+    protected $fillable = [ 'scheme_id', 'page_title', 'description', 'url', 'content', 'keywords', 'menu_id' ];
 
     public function menu()
     {

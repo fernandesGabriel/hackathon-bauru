@@ -10,30 +10,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link py-2" href="#">Início <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Institucional</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Como funcionar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Centro dia</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Bazar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Transparência</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link py-2" href="#">Contato</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-primary" role="button" aria-pressed="true" href="#">Contribua</a>
-            </li>
+            @foreach ($pages as $page)
+                <li class="nav-item">
+                    <a class="nav-link py-2" href="{{ route('home', ['name' => $page->url]) }}">{{ $page->page_title }}</a>
+                </li>
+            @endforeach
         </ul>
     </div>
 

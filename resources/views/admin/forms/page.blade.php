@@ -6,6 +6,16 @@
         <h1 class="h2">@lang('Page'): {{ $page->title }}</h1>
     </div>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="m-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ action('Admin\AdminPageController@update') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         @if ($errors->any())

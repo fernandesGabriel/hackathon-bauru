@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav float-right">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link py-2" href="#">Início <span class="sr-only">(current)</span></a>
             </li>

@@ -31,4 +31,9 @@ class Page extends Model
     {
         return $this->belongsTo(Scheme::class);
     }
+
+    public function getContentAttribute($content)
+    {
+        return $content ? json_decode($content) : $content;
+    }
 }

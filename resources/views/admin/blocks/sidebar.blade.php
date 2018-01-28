@@ -16,7 +16,7 @@
         @foreach ($pages as $page)
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin/page/form', ['page' => $page->id]) }}">
-                   {{ $page->title }}
+                   {{ $page->page_title }}
                 </a>
             </li>
         @endforeach

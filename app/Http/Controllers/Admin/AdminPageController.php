@@ -10,21 +10,12 @@ use Hackathon\Models\Scheme;
 
 class AdminPageController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index($id)
     {
         $page = Page::find($id);
@@ -47,7 +38,7 @@ class AdminPageController extends Controller
     }
 
     public function update(Request $request)
-    {        
+    {
         $validator = Validator::make($request->all(), [
             'id' => 'required',
             'page_title' => 'required|max:255',

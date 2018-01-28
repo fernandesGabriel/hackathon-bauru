@@ -21,4 +21,10 @@ class Gallery extends Model
     * @var array
     */
     protected $fillable = [ 'name', 'description', 'page_id' ];
+
+    public function attachments()
+    {
+        return $this->belongsToMany('Hackathon\Models\Attachment', 'attach_galleries', 'id_gallery', 'id_attachment');
+    }
+
 }

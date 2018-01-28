@@ -21,4 +21,9 @@ class Attachment extends Model
     * @var array
     */
     protected $fillable = [ 'title', 'description', 'type', 'filename', 'path', 'extension', 'size' ];
+
+    public function gallery()
+    {
+        return $this->belongsToMany('Hackathon\Models\Gallery', 'attach_galleries', 'id_attachment', 'id_gallery');
+    }
 }

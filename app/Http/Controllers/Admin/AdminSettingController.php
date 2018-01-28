@@ -29,7 +29,49 @@ class AdminSettingController extends Controller
      */
     public function indexContact()
     {
-        return view('admin.forms.contact');
+        $settings_phonenumber = Settings::find('settings_phonenumber');
+        $setting_facebooklink = Settings::find('setting_facebooklink');
+        $setting_contactemail = Settings::find('setting_contactemail');
+
+        return view('admin.forms.contact', [
+            'settings_phonenumber' => $settings_phonenumber,
+            'setting_facebooklink' => $setting_facebooklink,
+            'setting_contactemail' => $setting_contactemail
+        ]);
+    }
+
+    /**
+     * Show the application contact settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function saveContact (Request $request)
+    {
+        Settings::updateOrCreate(
+            ['key' => 'settings_phonenumber'],
+            [
+                'key' => 'settings_phonenumber',
+                'value' => $request->input('settings_phonenumber')
+            ]
+        );
+
+        Settings::updateOrCreate(
+            ['key' => 'setting_facebooklink'],
+            [
+                'key' => 'setting_facebooklink',
+                'value' => $request->input('setting_facebooklink')
+            ]
+        );
+
+        Settings::updateOrCreate(
+            ['key' => 'setting_contactemail'],
+            [
+                'key' => 'setting_contactemail',
+                'value' => $request->input('setting_contactemail')
+            ]
+        );
+
+        return redirect()->route('admin/payment/form');
     }
 
     /**
@@ -180,19 +222,19 @@ class AdminSettingController extends Controller
     public function savePayment(Request $request)
     {
         Settings::updateOrCreate(
+            ['key' => 'setting_pagseguro'],
             [
                 'key' => 'setting_pagseguro',
                 'value' => $request->input('setting_pagseguro')
-            ],
-            ['key' => 'setting_pagseguro']
+            ]
         );
 
         Settings::updateOrCreate(
+            ['key' => 'setting_payment'],
             [
                 'key' => 'setting_payment',
                 'value' => $request->input('setting_payment')
-            ],
-            ['key' => 'setting_payment']
+            ]
         );
 
         return redirect()->route('admin/payment/form');

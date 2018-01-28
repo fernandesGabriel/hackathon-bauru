@@ -23,5 +23,20 @@ class SettingsTableSeeder extends Seeder
         $page->key = "setting_payment";
         $page->value = "";
         $page->save();
+
+        $page = new Settings();
+        $page->key = "settings_phonenumber";
+        $page->value = "";
+        $page->save();
+
+        $page = new Settings();
+        $page->key = "setting_facebooklink";
+        $page->value = "";
+        $page->save();
+
+        $page = new Settings();
+        $page->key = "setting_contactemail";
+        $page->value = "";
+        $page->save();
     }
 }

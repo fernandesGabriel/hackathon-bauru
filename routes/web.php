@@ -35,6 +35,7 @@ Route::prefix('admin')->name('admin/')->namespace('Admin')->group(function () {
     Route::get('/configuracoes/pagina/{page}', 'AdminPageController@index')->name('page/form');
     Route::post('/configuracoes/pagina/update', 'AdminPageController@update')->name('page/update');
     Route::get('/configuracoes/contato', 'AdminSettingController@indexContact')->name('contact/form');
+    Route::post('/configuracoes/contato', 'AdminSettingController@saveContact')->name('contact/update');
     Route::get('/configuracoes/usuarios', 'AdminSettingController@indexUser')->name('user');
     Route::get('/configuracoes/usuario/{user?}', 'AdminSettingController@showUser')->name('user/form');
     Route::post('/configuracoes/usuarios/update', 'AdminSettingController@saveUser')->name('user/update');

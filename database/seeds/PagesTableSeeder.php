@@ -25,7 +25,7 @@ class PagesTableSeeder extends Seeder
 
         foreach ($pages as $key => $row) {
         	$page = new Page;
-        	$page->title = $row[0];
+        	$page->page_title = $row[0];
         	$page->scheme_id = $row[1];
         	$page->url = $row[2];
         	$page->menu_id = ($key + 1);

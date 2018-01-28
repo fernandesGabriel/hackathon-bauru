@@ -16,7 +16,7 @@ class MenusTableSeeder extends Seeder
         $pages = Page::orderBy('id')->get();
         foreach ($pages as $page) {
         	$menu = new Menu;
-        	$menu->title = $page->title;
+        	$menu->title = $page->page_title;
         	$menu->path = $page->url;
         	$menu->save();
         }

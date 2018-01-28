@@ -5,6 +5,7 @@ namespace Hackathon\Providers;
 use Hackathon\Models\Page;
 use Hackathon\Models\Menu;
 use Hackathon\Models\Settings;
+use Hackathon\Models\Attachment;
 use Illuminate\Support\ServiceProvider;
 
 class NavigationServiceProvider extends ServiceProvider
@@ -46,14 +47,6 @@ class NavigationServiceProvider extends ServiceProvider
     }
 
     public function composeFooter()
-    {
-        $footer = Settings::select('key as chave', 'value')->get()->keyBy('chave');
-        view()->composer('blocks.footer', function ($view) use ($footer){
-            $view->with('footer', $footer);
-        });
-    }
-
-    public function composeSponsor()
     {
         $footer = Settings::select('key as chave', 'value')->get()->keyBy('chave');
         view()->composer('blocks.footer', function ($view) use ($footer){

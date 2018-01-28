@@ -102,18 +102,11 @@
                 <div class="col-md-12">
                     <h2>Empresas que apoiam essa causa</h2>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="{{ asset('img/sporsor1.png') }}" alt="Lorem ipsum">
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="{{ asset('img/sporsor2.png') }}" alt="Lorem ipsum">
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="{{ asset('img/sporsor3.png') }}" alt="Lorem ipsum">
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <img class="img-fluid rounded" src="{{ asset('img/sporsor4.png') }}" alt="Lorem ipsum">
-                </div>
+                @foreach ($attachs as $attach)
+                    <div class="col-lg-3 col-md-6">
+                        <img class="img-fluid rounded" src="{{ URL::to($attach->path) }}" alt="{{ $attach->title }}">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

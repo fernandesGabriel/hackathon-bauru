@@ -28,29 +28,34 @@ class AdminPageController extends Controller
     public function index($id)
     {
         $page = Page::find($id);
-        $scheme = Scheme::get();
-        return view('admin.forms.page', ['page' => $page, 'scheme' => $scheme]);
+        $scheme = $page->scheme->data;
+        $allscheme = Scheme::get();
+        return view('admin.forms.page', ['page' => $page, 'scheme' => $scheme, 'allscheme' => $allscheme]);
     }
 
     public function update(Request $request)
     {        
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'title' => 'required|max:255',
+            'page_title' => 'required|max:255',
             'scheme' => 'required',
             'url' => 'required'
         ]);
         $id = $request->input('id');
         if(!$validator->fails()){
-            $menu_id = null;
             $page = Page::find($id);
+            $scheme = $page->scheme->data;
+            foreach ($scheme as $key => $value) {
+                if(!in_array($value->name, ['page_title'])){
+                    $datas[$key] = $request->input($key);
+                }
+            }
             $page->scheme_id = $request->input('scheme');
-            $page->title = $request->input('title');
+            $page->page_title = $request->input('page_title');
             $page->description = $request->input('description');
-            $page->content = $request->input('content');
+            $page->content = json_encode($datas);
             $page->url = $request->input('url');
             $page->keywords = $request->input('keywords');
-            $page->menu_id = $request->input('$menu_id');
             $page->save();
         }
         return redirect('/admin/pagina/' . $id)->withErrors($validator)->withInput();

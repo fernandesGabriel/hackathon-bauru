@@ -19,10 +19,17 @@ Route::namespace('Auth')->group(function () {
     Route::get('/login', 'LoginController@index')->name('login/form');
     Route::post('/login', 'LoginController@login')->name('login');
     Route::post('/logout', 'LoginController@logout')->name('logout');
-    Route::post('/senha/email', 'ForgotPasswordController@index')->name('password/email');
-    Route::get('/senha/reset', 'ForgotPasswordController@index')->name('password/reset/form');
+
+    Route::get('/senha/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password/reset/form');
+    Route::post('/senha/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password/email');
+    Route::get('/senha/email', 'ForgotPasswordController@index')->name('password/email');
+    Route::get('/senha/reset/{token}', 'ResetPasswordController@showResetForm')->name('password/reset/token/form');
     Route::post('/senha/reset', 'ResetPasswordController@reset')->name('password/reset');
-    Route::get('/senha/reset/{token}', 'ResetPasswordController@index')->name('password/reset/token/form');
+    
+    Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset/{token?}', 'ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('password/reset', 'ResetPasswordController@reset');
 });
 
 /*

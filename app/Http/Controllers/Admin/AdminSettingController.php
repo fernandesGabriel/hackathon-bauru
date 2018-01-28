@@ -5,6 +5,7 @@ namespace Hackathon\Http\Controllers\Admin;
 use Hackathon\Models\Settings;
 use Hackathon\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Validator;
 use Hackathon\Http\Controllers\Controller;
@@ -123,7 +124,7 @@ class AdminSettingController extends Controller
 
             if (!empty($request->input('password'))) {
 
-                $data['password'] = $request->input('password');
+                $data['password'] = Hash::make($request->input('password'));
 
             }
 

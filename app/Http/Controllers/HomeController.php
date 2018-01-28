@@ -19,6 +19,8 @@ class HomeController extends Controller
     		$view = $request->page->scheme->view;
     	}
 
-        return view("templates." . $view);
+        return view("templates." . $view, [
+            'request' => $request
+        ]);
     }
 }
